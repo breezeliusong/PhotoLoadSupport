@@ -31,7 +31,16 @@ namespace PhotoLoadSupportCSharp
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
-
+        //open similar file 
+        protected async override void OnFileActivated(FileActivatedEventArgs args)
+        {
+            base.OnFileActivated(args);
+            var files=await args.NeighboringFilesQuery.GetFilesAsync();
+            foreach(var file in files)
+            {
+                System.Diagnostics.Debug.WriteLine(file.Name);
+            }
+        }
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.

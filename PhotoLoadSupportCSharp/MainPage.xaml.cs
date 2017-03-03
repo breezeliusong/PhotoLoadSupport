@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -28,6 +29,7 @@ namespace PhotoLoadSupportCSharp
         {
             this.InitializeComponent();
         }
+
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
